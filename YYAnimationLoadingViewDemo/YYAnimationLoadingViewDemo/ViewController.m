@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "PinwheelLoadingView.h" 
+#import "AnimationRectLoadingView.h"
 
 @interface ViewController ()
 
@@ -14,16 +16,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)pinwheelButtonAction
+{
+    [PinwheelLoadingView showAnimationLoading];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [PinwheelLoadingView dismissAnimationLoading];
+    });
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)rectButtonAction
+{
+    [AnimationRectLoadingView showAnimationLoading];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [AnimationRectLoadingView dismissAnimationLoading];
+    });
 }
-
 
 @end
