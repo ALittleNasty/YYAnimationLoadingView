@@ -18,7 +18,7 @@ Customize animation loading view
 
 #### 2. PinwheelLoadingView
 
-使用``CAShapeLayer``配合``UIBezierPath``绘制扇形, 完成风车的形状. 用``CABasicAnimation``的``rotation``动画做旋转效果. 这个空间继承自``UIView``, 也是封装为一个单例加到``keyWindow``上面.
+使用``CAShapeLayer``配合``UIBezierPath``绘制扇形, 完成风车的形状. 用``CABasicAnimation``的``rotation``动画做旋转效果. 这个控件继承自``UIView``, 也是封装为一个单例加到``keyWindow``上面.
 
 * 显示的时候调用
 
@@ -26,4 +26,4 @@ Customize animation loading view
 
 * 隐藏loading动画的时候调用
 
-	``[PinwheelLoadingView dismissAnimationLoading];``即可!
+	``[PinwheelLoadingView dismissAnimationLoading];``
